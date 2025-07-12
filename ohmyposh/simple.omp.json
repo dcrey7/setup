@@ -1,0 +1,72 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "#1e3a8a",
+          "foreground": "#ffffff",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "template": " 📂 {{ .Path }} ",
+          "type": "path",
+          "properties": {
+            "style": "full"
+          }
+        },
+        {
+          "background": "#22c55e",
+          "foreground": "#ffffff",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "template": " {{ if .HEAD }}{{ .HEAD }}{{ else }}no-git{{ end }} ",
+          "type": "git",
+          "properties": {
+            "fetch_status": false
+          }
+        },
+        {
+          "background": "#f97316",
+          "foreground": "#ffffff",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "template": " 👾 {{ if .Venv }}{{ .Venv }}{{ else }}{{ if .Full }}{{ .Full }}{{ else }}system{{ end }}{{ end }} ",
+          "type": "python"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "#1f2937",
+          "foreground": "#ffffff",
+          "style": "plain",
+          "template": " ⚡{{ .FormattedMs }} ",
+          "type": "executiontime",
+          "properties": {
+            "threshold": 0,
+            "style": "round"
+          }
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#ffffff",
+          "style": "plain",
+          "template": "$ ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 3
+}
